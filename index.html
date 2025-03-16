@@ -5,28 +5,163 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>K&B Event Rentals</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>K&B Event Rentals</h1>
-        <p>Rent chairs and tables for your wedding!</p>
+        <div class="header-content">
+            <h1>K&B Event Rentals</h1>
+            <p class="tagline">Elegant chairs and tables for your perfect wedding day</p>
+        </div>
     </header>
-    <section>
-        <h2>Contact Us</h2>
-        <form id="contact-form">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-            
-            <button type="submit">Send</button>
-        </form>
-        <p id="form-message"></p>
+
+    <nav>
+        <ul>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="hero">
+        <div class="hero-content">
+            <h2>Make Your Special Day Perfect</h2>
+            <p>Quality furniture rentals for weddings and special events</p>
+            <a href="#contact" class="cta-button">Book Now</a>
+        </div>
     </section>
+
+    <section id="products" class="section-container">
+        <h2 class="section-title">Our Products</h2>
+        
+        <div class="product-category">
+            <h3>Chairs</h3>
+            <div class="product-grid">
+                <div class="product-item">
+                    <div class="product-image placeholder">
+                        <!-- Placeholder for chair image -->
+                        <div class="image-placeholder">
+                            <span>Resin Chair Image</span>
+                        </div>
+                    </div>
+                    <h4>Resin Chairs</h4>
+                    <p>Elegant and comfortable seating option for your special day</p>
+                </div>
+                
+                <div class="product-item">
+                    <div class="product-image placeholder">
+                        <!-- Placeholder for chair image -->
+                        <div class="image-placeholder">
+                            <span>White Folding Chair Image</span>
+                        </div>
+                    </div>
+                    <h4>White Plastic Folding Chairs</h4>
+                    <p>Classic, affordable seating perfect for any wedding venue</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="product-category">
+            <h3>Tables</h3>
+            <div class="product-grid">
+                <div class="product-item">
+                    <div class="product-image placeholder">
+                        <!-- Placeholder for table image -->
+                        <div class="image-placeholder">
+                            <span>Banquet Table Image</span>
+                        </div>
+                    </div>
+                    <h4>8-Foot Banquet Tables</h4>
+                    <p>Spacious rectangular tables ideal for buffets and guest seating</p>
+                </div>
+                
+                <div class="product-item">
+                    <div class="product-image placeholder">
+                        <!-- Placeholder for table image -->
+                        <div class="image-placeholder">
+                            <span>Round Table Image</span>
+                        </div>
+                    </div>
+                    <h4>60-Inch Round Tables</h4>
+                    <p>Perfect circular tables for intimate guest conversations</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="section-container">
+        <h2 class="section-title">Pricing</h2>
+        <div class="pricing-container">
+            <div class="pricing-item">
+                <h3>Chairs</h3>
+                <ul class="pricing-list">
+                    <li><span>Resin Chairs</span> <span class="price">$3.00 per chair</span></li>
+                    <li><span>White Plastic Folding Chairs</span> <span class="price">$1.60 per chair</span></li>
+                </ul>
+            </div>
+            
+            <div class="pricing-item">
+                <h3>Additional Fees</h3>
+                <ul class="pricing-list">
+                    <li><span>Delivery Fee</span> <span class="price">$100.00</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-container">
+        <h2 class="section-title">Contact Us</h2>
+        <p class="contact-intro">Ready to reserve chairs and tables for your wedding? Fill out the form below to get started!</p>
+        
+        <div class="contact-container">
+            <form id="contact-form" action="https://formspree.io/f/mdkekzkv" method="POST">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                
+                <div class="form-group">
+                    <label for="event-date">Event Date:</label>
+                    <input type="date" id="event-date" name="event-date">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-button">Send Request</button>
+            </form>
+            <p id="form-message"></p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>K&B Event Rentals</h3>
+                <p>Quality furniture rentals for weddings and special events</p>
+            </div>
+            <div class="footer-contact">
+                <p>Email: info@kbeventrentals.com</p>
+                <p>Phone: (555) 123-4567</p>
+            </div>
+            <p class="copyright">&copy; 2025 K&B Event Rentals. All rights reserved.</p>
+        </div>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
