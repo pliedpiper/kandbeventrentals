@@ -230,6 +230,13 @@ nav a:hover::after {
     overflow: hidden;
 }
 
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
 .image-placeholder {
     display: flex;
     align-items: center;
