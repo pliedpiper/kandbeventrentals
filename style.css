@@ -3,12 +3,16 @@
     --primary-color: #f5c0c0; /* Soft pink */
     --secondary-color: #f8e6e6; /* Light pink */
     --accent-color: #dda0a0; /* Darker pink */
+    --gold-accent: #d4af37; /* Soft gold */
+    --gold-light: #f4e4c1; /* Light gold */
     --text-color: #3a3a3a;
     --light-text: #777777;
-    --background-color: #fff9f9;
+    --background-color: #fffaf8;
     --border-color: #f0d6d6;
     --success-color: #6a9955;
     --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.12);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 * {
@@ -33,15 +37,18 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
+    letter-spacing: 1px;
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
+    letter-spacing: 0.5px;
 }
 
 h3 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    letter-spacing: 0.5px;
 }
 
 p {
@@ -73,9 +80,11 @@ header {
 }
 
 .tagline {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 300;
-    margin-top: 0.5rem;
+    margin-top: 0.8rem;
+    letter-spacing: 0.5px;
+    opacity: 0.95;
 }
 
 /* Navigation */
@@ -116,12 +125,12 @@ nav a::after {
     height: 2px;
     bottom: -5px;
     left: 0;
-    background-color: var(--accent-color);
+    background: linear-gradient(90deg, var(--gold-accent) 0%, var(--accent-color) 100%);
     transition: width 0.3s ease;
 }
 
 nav a:hover {
-    color: var(--accent-color);
+    color: var(--gold-accent);
 }
 
 nav a:hover::after {
@@ -130,79 +139,129 @@ nav a:hover::after {
 
 /* Hero Section */
 #hero {
-    background-color: var(--secondary-color);
-    padding: 5rem 1rem;
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+    padding: 6rem 1rem;
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+    pointer-events: none;
 }
 
 .hero-content {
     max-width: 800px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
 .hero-content h2 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    color: var(--text-color);
 }
 
 .hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+    color: var(--light-text);
+    font-weight: 300;
 }
 
 .cta-button {
     display: inline-block;
-    background-color: var(--accent-color);
+    background: linear-gradient(135deg, var(--gold-accent) 0%, var(--accent-color) 100%);
     color: white;
-    padding: 0.8rem 2rem;
+    padding: 1rem 2.5rem;
     border-radius: 50px;
     font-weight: 600;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    letter-spacing: 1.5px;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    text-transform: uppercase;
+    font-size: 0.9rem;
 }
 
 .cta-button:hover {
-    background-color: var(--primary-color);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, var(--accent-color) 0%, var(--gold-accent) 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
     color: white;
 }
 
 /* Section Containers */
 .section-container {
     max-width: 1200px;
-    margin: 0 auto 4rem;
+    margin: 0 auto 6rem;
     padding: 0 1.5rem;
 }
 
 .section-title {
     text-align: center;
-    margin-bottom: 2.5rem;
+    margin-bottom: 3.5rem;
     position: relative;
-    padding-bottom: 0.8rem;
+    padding-bottom: 1rem;
+    font-size: 2.5rem;
+    color: var(--text-color);
 }
 
 .section-title::after {
     content: '';
     position: absolute;
-    width: 60px;
+    width: 80px;
     height: 3px;
-    background-color: var(--accent-color);
+    background: linear-gradient(90deg, var(--gold-accent) 0%, var(--accent-color) 100%);
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+/* Section Dividers */
+.section-container + .section-container::before {
+    content: '❦';
+    display: block;
+    text-align: center;
+    font-size: 2rem;
+    color: var(--gold-accent);
+    margin: -3rem auto 3rem;
+    opacity: 0.6;
 }
 
 /* Products Section */
 .product-category {
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
 }
 
 .product-category h3 {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     text-align: center;
+    color: var(--text-color);
+    position: relative;
+    padding-bottom: 0.8rem;
+}
+
+.product-category h3::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 2px;
+    background: var(--gold-accent);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0.6;
 }
 
 .product-grid {
@@ -213,15 +272,34 @@ nav a:hover::after {
 
 .product-item {
     background-color: white;
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
     box-shadow: var(--shadow);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: var(--transition);
+    position: relative;
+    border: 1px solid var(--border-color);
+}
+
+.product-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gold-accent) 0%, var(--primary-color) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .product-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--gold-light);
+}
+
+.product-item:hover::before {
+    opacity: 1;
 }
 
 .product-image {
@@ -255,6 +333,31 @@ nav a:hover::after {
     color: var(--light-text);
 }
 
+/* Coming Soon Badge */
+.product-item.coming-soon {
+    position: relative;
+}
+
+.coming-soon-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, var(--gold-accent) 0%, var(--gold-light) 100%);
+    color: white;
+    padding: 0.5rem 1.2rem;
+    border-radius: 25px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
+    z-index: 2;
+}
+
+.product-item.coming-soon .product-image {
+    opacity: 0.9;
+}
+
 /* Pricing Section */
 .pricing-container {
     display: grid;
@@ -264,9 +367,36 @@ nav a:hover::after {
 
 .pricing-item {
     background-color: white;
-    padding: 2rem;
-    border-radius: 8px;
+    padding: 2.5rem;
+    border-radius: 12px;
     box-shadow: var(--shadow);
+    transition: var(--transition);
+    border: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.pricing-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gold-accent) 0%, var(--primary-color) 100%);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.pricing-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--gold-light);
+}
+
+.pricing-item:hover::before {
+    transform: scaleX(1);
 }
 
 .pricing-item h3 {
@@ -291,6 +421,11 @@ nav a:hover::after {
 
 .price {
     font-weight: 600;
+    color: var(--gold-accent);
+    transition: color 0.3s ease;
+}
+
+.pricing-item:hover .price {
     color: var(--accent-color);
 }
 
@@ -305,9 +440,22 @@ nav a:hover::after {
     max-width: 600px;
     margin: 0 auto;
     background-color: white;
-    padding: 2rem;
-    border-radius: 8px;
+    padding: 3rem;
+    border-radius: 12px;
     box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    position: relative;
+}
+
+.contact-container::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 20%;
+    right: 20%;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--gold-accent), transparent);
+    border-radius: 2px;
 }
 
 /* Form Styling */
@@ -324,19 +472,21 @@ label {
 
 input, textarea {
     width: 100%;
-    padding: 0.8rem;
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
+    padding: 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
     background-color: #fefefe;
     font-family: 'Raleway', sans-serif;
     font-size: 1rem;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    transition: var(--transition);
 }
 
 input:focus, textarea:focus {
     outline: none;
-    border-color: var(--accent-color);
-    box-shadow: 0 0 0 3px rgba(221, 160, 160, 0.2);
+    border-color: var(--gold-accent);
+    box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.15);
+    background-color: white;
+    transform: translateY(-1px);
 }
 
 textarea {
@@ -345,23 +495,31 @@ textarea {
 }
 
 .submit-button {
-    background-color: var(--accent-color);
+    background: linear-gradient(135deg, var(--gold-accent) 0%, var(--accent-color) 100%);
     color: white;
     border: none;
-    padding: 0.8rem 2rem;
+    padding: 1rem 2rem;
     border-radius: 50px;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: var(--transition);
     width: 100%;
     font-size: 1rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
 }
 
 .submit-button:hover {
-    background-color: var(--primary-color);
-    transform: translateY(-2px);
+    background: linear-gradient(135deg, var(--accent-color) 0%, var(--gold-accent) 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+}
+
+.submit-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
 }
 
 #form-message {
@@ -374,9 +532,21 @@ textarea {
 
 /* Footer */
 footer {
-    background-color: var(--text-color);
+    background: linear-gradient(135deg, var(--text-color) 0%, #2a2a2a 100%);
     color: white;
-    padding: 3rem 1.5rem;
+    padding: 4rem 1.5rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gold-accent) 0%, var(--primary-color) 50%, var(--gold-accent) 100%);
 }
 
 .footer-content {
@@ -388,7 +558,9 @@ footer {
 }
 
 .footer-info h3 {
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
+    font-size: 1.8rem;
+    color: var(--gold-light);
 }
 
 .footer-info p, .footer-contact p {
@@ -406,18 +578,34 @@ footer {
     color: rgba(255, 255, 255, 0.6);
 }
 
+/* Add animation for fade-in effect */
+.fade-in {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Responsive Adjustments */
 @media (max-width: 768px) {
     h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
     
     h2 {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
     
     .hero-content h2 {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
     
     .section-container {
