@@ -654,6 +654,66 @@ textarea {
     color: var(--accent-color);
 }
 
+/* Mobile Responsive Calculator */
+@media (max-width: 768px) {
+    .calculator-section {
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+    }
+    
+    .calculator-section h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .calculator-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .quote-display {
+        padding: 1.5rem;
+    }
+    
+    .quote-display h4 {
+        font-size: 1.4rem;
+    }
+    
+    .quote-line {
+        font-size: 1rem;
+        padding: 0.6rem 0;
+    }
+    
+    .quote-line.total {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .calculator-section {
+        padding: 1rem;
+    }
+    
+    .quote-display {
+        padding: 1rem;
+    }
+    
+    .quote-line {
+        font-size: 0.95rem;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    .quote-line span:first-child {
+        flex: 1 1 100%;
+    }
+    
+    .quote-line span:last-child {
+        flex: 1 1 100%;
+        text-align: right;
+    }
+}
+
 .form-note {
     text-align: center;
     color: var(--light-text);
