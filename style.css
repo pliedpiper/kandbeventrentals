@@ -532,6 +532,136 @@ textarea {
     color: var(--success-color);
 }
 
+/* Quote Section */
+.quote-section {
+    text-align: center;
+    background: var(--secondary-color);
+    padding: 5rem 1.5rem;
+}
+
+#quote-hero {
+    text-align: center;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+}
+
+.quote-container {
+    margin-top: 2rem;
+}
+
+.quote-button {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--gold-accent) 0%, var(--accent-color) 100%);
+    color: white;
+    text-decoration: none;
+    padding: 1.2rem 3rem;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+}
+
+.quote-button:hover {
+    background: linear-gradient(135deg, var(--accent-color) 0%, var(--gold-accent) 100%);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* Calculator Section */
+.calculator-section {
+    background: var(--secondary-color);
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+}
+
+.calculator-section h3 {
+    color: var(--accent-color);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.calculator-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.calc-input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.calc-input:focus {
+    border-color: var(--gold-accent);
+    outline: none;
+}
+
+/* Quote Display */
+.quote-display {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    margin-top: 2rem;
+}
+
+.quote-display h4 {
+    color: var(--gold-accent);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+}
+
+.quote-breakdown {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.quote-line {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 1.1rem;
+}
+
+.quote-line.total {
+    border-bottom: none;
+    border-top: 3px double var(--gold-accent);
+    margin-top: 0.5rem;
+    padding-top: 1.2rem;
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--accent-color);
+}
+
+.quote-line span:last-child {
+    font-weight: 600;
+    color: var(--gold-accent);
+}
+
+.quote-line.total span:last-child {
+    color: var(--accent-color);
+}
+
+.form-note {
+    text-align: center;
+    color: var(--light-text);
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    font-style: italic;
+}
+
 /* Footer */
 footer {
     background: linear-gradient(135deg, var(--text-color) 0%, #2a2a2a 100%);

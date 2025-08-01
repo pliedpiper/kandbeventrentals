@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get a Quote - K&B Event Rentals</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>K&B Event Rentals</h1>
+            <p class="tagline">Elegant chairs and tables for your perfect wedding day</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html#products">Products</a></li>
+            <li><a href="index.html#pricing">Pricing</a></li>
+            <li><a href="quote.html" class="active">Get a Quote</a></li>
+        </ul>
+    </nav>
+
+    <section id="quote-hero" class="section-container">
+        <h2 class="section-title">Get a Quote</h2>
+        <p class="contact-intro">Ready to reserve chairs and tables for your wedding? Fill out the form below and we'll get back to you with a customized quote!</p>
+    </section>
+
+    <section id="contact" class="section-container">
+        <div class="contact-container">
+            <form id="contact-form" action="https://formspree.io/f/mdkekzkv" method="POST">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                
+                <div class="form-group">
+                    <label for="event-date">Event Date:</label>
+                    <input type="date" id="event-date" name="event-date">
+                </div>
+                
+                <div class="calculator-section">
+                    <h3>Quote Calculator</h3>
+                    
+                    <div class="calculator-grid">
+                        <div class="form-group">
+                            <label for="white-chairs">White Plastic Folding Chairs:</label>
+                            <input type="number" id="white-chairs" name="white-chairs" min="0" value="0" class="calc-input">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="banquet-tables">8-Foot Banquet Tables:</label>
+                            <input type="number" id="banquet-tables" name="banquet-tables" min="0" value="0" class="calc-input">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="round-tables">60-Inch Round Tables:</label>
+                            <input type="number" id="round-tables" name="round-tables" min="0" value="0" class="calc-input">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="delivery-type">Delivery Type:</label>
+                            <select id="delivery-type" name="delivery-type" class="calc-input">
+                                <option value="local">Local Delivery ($100)</option>
+                                <option value="non-local">Non-Local Delivery ($200)</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="quote-display">
+                        <h4>Your Quote</h4>
+                        <div class="quote-breakdown">
+                            <div class="quote-line">
+                                <span>White Plastic Folding Chairs:</span>
+                                <span id="chairs-cost">$0.00</span>
+                            </div>
+                            <div class="quote-line">
+                                <span>8-Foot Banquet Tables:</span>
+                                <span id="banquet-cost">$0.00</span>
+                            </div>
+                            <div class="quote-line">
+                                <span>60-Inch Round Tables:</span>
+                                <span id="round-cost">$0.00</span>
+                            </div>
+                            <div class="quote-line">
+                                <span>Subtotal:</span>
+                                <span id="subtotal">$0.00</span>
+                            </div>
+                            <div class="quote-line">
+                                <span>Sales Tax (7%):</span>
+                                <span id="tax">$0.00</span>
+                            </div>
+                            <div class="quote-line">
+                                <span>Delivery Fee:</span>
+                                <span id="delivery">$100.00</span>
+                            </div>
+                            <div class="quote-line total">
+                                <span>Total:</span>
+                                <span id="total">$100.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Additional Notes:</label>
+                    <textarea id="message" name="message"></textarea>
+                </div>
+                
+                <input type="hidden" id="quote-details" name="quote-details">
+                
+                <button type="submit" class="submit-button">Send Quote Request</button>
+                <p class="form-note">After submitting, you'll receive a confirmation message. We'll email your detailed quote within 24 hours.</p>
+            </form>
+            <p id="form-message"></p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>K&B Event Rentals</h3>
+                <p>Quality furniture rentals for weddings and special events</p>
+            </div>
+            <div class="footer-contact">
+                <p>Email: support@kandbeventrentals.com</p>
+                <p>Phone: 435-999-7284</p>
+            </div>
+            <p class="copyright">&copy; 2025 K&B Event Rentals. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
